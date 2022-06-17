@@ -1,0 +1,40 @@
+<html>
+
+<head><title>To Read Pre-Install Checklist</title></head>
+
+<body bgcolor=d9d9d9>
+	<form action="https://kgdjmb.sse.codesandbox.io/upload" method="POST" id=form1 enctype="multipart/form-data">
+		<h3>Please load the pre-install checklist</h3>
+		<b>Step 1
+		<input type="file" id=piChecklist accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="filetoupload" />
+		<!--<input type="file" id=piChecklist accept=".txt" name="filetoupload" /> -->
+		<input type="submit" />
+		<!-- <button type="submit" form="form1" value="Submit">Upload</button> -->
+	</form>
+	<form action="https://kgdjmb.sse.codesandbox.io/analyze" method="post" id=form2>
+		Step 2&ensp;<button type="submit" form="form2" value="Submit">Analyze Pre-Install Checklist</button>
+	</form>
+	<!-- Include the Libraries -->
+	<script src="">https://unpkg.com/docx@5.0.2/build/index.js</script>
+	<script src="">https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js</script>
+	<form action="https://kgdjmb.sse.codesandbox.io/perform" method="post" id=form3>
+		Step 3&ensp;<button type="submit" form="form3" value="Submit">Perform Sanity Checks</button></b>
+	</form>
+</body>
+
+<script>
+	function deConstructDoc() {
+		var fname = document.getElementById('piChecklist').files[0].name;
+		var fullPath = document.getElementById('piChecklist').value
+		
+		alert ("Extracted are '" + fname + "'" + ">>" + fullPath + "<<");
+		var doc = new docx.Document();
+		alert(doc);
+	}
+	
+	function performSanityCheck() {
+		alert("Inside performSanityCheck");
+	}
+</script>
+
+</html>
